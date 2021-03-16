@@ -4,11 +4,14 @@ import { Header } from './Header';
 import { Watchlist } from './Watchlist';
 import { Watched } from './Watched';
 import { Add } from './Add';
-
+import GlobalProvider from '../context/GlobalState';
 import '../index.css';
+
+
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
       <Header />
       <Switch>
@@ -27,6 +30,7 @@ function App() {
 
       </Switch>
     </Router>
+    </GlobalProvider>
   );
 }
 
