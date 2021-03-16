@@ -14,7 +14,8 @@ export const Add = () => {
 
     if (e.target.value) {
       fetch(`
-    https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&page=1&${e.target.value}`)
+    https://api.themoviedb.org/3/search/movie?api_key=04c35731a5ee918f014970082a0088b1&page=1&query=${e.target.value}`)
+  // https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&page=1&query=${e.target.value}`)
         .then((res) => res.json())
         .then((data) => {
           if (!data.errors) {
