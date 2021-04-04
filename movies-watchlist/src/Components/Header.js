@@ -5,22 +5,20 @@ export const Header = () => {
   return (
     <header>
       <div className='container'>
-        <div className='inner-content'>
-          <div className='brand'>
-            <Link to='/'>Watchlist</Link>
-          </div>
-          <ul className='nav-links'>
-            <li>
-              <Link to='/'>Watch List</Link>
-            </li>
-            <li>
-              <Link to='/watched'>Watched</Link>
-            </li>
-            <li>
-              <Link to='/add' className='btn'>+ Add</Link>
-            </li>
-          </ul>
+        <div className='logo-container'>
+          <a href='/add'><h1 className='logo' >Movies App</h1></a>
         </div>
+        <ul className='nav-links'>
+          <li>
+            <Link className='navitem' to='/watchlist'>Watch List</Link>
+          </li>
+          <li>
+            <Link className='navitem' to='/watched'>Seen It</Link>
+          </li>
+          <li>
+            <Link className='navitem' to='/add'>+ Add</Link>
+          </li>
+        </ul>
       </div>
     </header>
   )
