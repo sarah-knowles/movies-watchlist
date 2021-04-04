@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #322737;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar a {
+  color: #fff;
+  float: right;
+  font-weight: 300;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 28px;
+  /* display: flex; */
+}
+
+.navitem {
+  background: -webkit-linear-gradient(rgb(245, 245, 245), #794e8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  padding: 15px;
+  margin-top: -35px;
+}
+
+.logo-container {
+  width: 35%;
+}
+
+.logo {
+  font-size: 3.5rem;
+  margin: 35px;
+  background: -webkit-linear-gradient(rgb(223, 182, 233), #312038);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.section {
+  padding: 15px;
+}
+
+.searchbox-wrap {
+  float: right;
+  margin-right: -260px;
+  margin-top: -80px;
+}
+
+.searchbox {
+  color: black;
+  border: none;
+  border-radius: 5px;
+  float: right;
+  font-size: 22px;
+  height: 35px;
+  padding: 3px;
+  outline: none;
+  background-color: #bcafc3;
+}
+
+.searchbox:focus {
+  box-shadow: 0 0 8px 3px #ac85c2;
+}
+
+.movie-container {
+  max-width: 860px;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 35px;
+  margin-top: 95px;
+}
+
+
+.results .result {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 15px;
+  width: 350px;
+  min-width: 250px;
+}
+
+.results .result img {
+  display: block;
+  width: 100%;
+  height: 475px;
+  object-fit: contain;
+}
+
+.results .result h3 {
+  padding: 25px 0 15px;
+  flex: 1 1 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.results .result h5 {
+  color: #ac85c2;
+  max-width: 250px;
+  text-align: center;
+  text-overflow: ellipsis;
+  padding-bottom: 25px;
+}
+
+.results .result:hover h3 {
+  color: #ac85c2;
+}
+
+ul li {
+  list-style-type: none;
+}
