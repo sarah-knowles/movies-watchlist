@@ -5,8 +5,12 @@ export const Resultcard = ({ movie }) => {
   let watchlist = [0, 1, 2];
   let storedMovie = watchlist.find(o => o.id === movie.id);
 
-  //const watchlistDisabled = storedMovie ? true : false;
-const watchlistDisabled = false;
+  const watchlistDisabled = storedMovie ? true : false;
+
+  function addMovieToWatchlist() {
+
+}
+
   return (
     <div className='result-card'>
       <div className='poster-wrapper'>
@@ -25,9 +29,8 @@ const watchlistDisabled = false;
         </div>
         <div className='controls'>
           <button className='btn' 
-          disabled={watchlistDisabled}>
-         {/* onClick={() => addMovieToWatchlist(movie)}>Add to Watchlist */}
-         </button>
+          disabled={watchlistDisabled}
+         onClick={() => addMovieToWatchlist(movie)}>Add</button>
         </div>
       </div>
     </div>

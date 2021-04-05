@@ -8,10 +8,39 @@
 body {
   background-color: #322737;
   color: #fff;
+  -ms-overflow-style: none;  /* IE and Edge */   
+}
+
+body::-webkit-scrollbar {
+  display: none; /*Chrome, Safari & Opera */
+}
+
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
 }
 
 a {
   text-decoration: none;
+}
+
+
+.nav-links {
+  height: 80px;
+  width: 100%;
 }
 
 .navbar a {
@@ -22,7 +51,6 @@ a {
   padding: 14px 20px;
   text-decoration: none;
   font-size: 28px;
-  /* display: flex; */
 }
 
 .navitem {
@@ -54,9 +82,10 @@ a {
 }
 
 .searchbox-wrap {
+  display: block;
   float: right;
-  margin-right: -260px;
-  margin-top: -80px;
+  margin-right: 25px;
+  margin-top: -25px;
 }
 
 .searchbox {
@@ -132,4 +161,16 @@ a {
 
 ul li {
   list-style-type: none;
+}
+
+.btn {
+  margin: 5px 46% 25px;
+  padding: 2px;
+  background-color: #ad93bd;
+  text-align: center; 
+}
+
+.add-content {
+ display: inline-flex;
+ width: 140%;
 }

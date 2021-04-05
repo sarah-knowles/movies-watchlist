@@ -3,13 +3,13 @@ const express = require('express')
 const path = require('path')
 const request = require('superagent')
 const server = express()
-
+const moviesDatabase = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_API_KEY_TMDB}&page=1&`
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
 server.get('/api/search', (req, res) => {
   request
-    .get(`https://api.themoviedb.org/3/search/movie?api_key=04c35731a5ee918f014970082a0088b1&page=1&`)
+    .get(moviesDatabase)
     .then(response => res.json(response.body))
 })
 
