@@ -11,9 +11,9 @@ export function getAllMovies () {
     .then(movies => movies.body)
 }
 
-export function saveMovie (movie) {
+export function addMovieToWatchlist (movie) {
   return request
-    .post('/api/v1/movies')
+    .post('/api/v1/watchlist')
     .send(movie)
     .then((res => res.body))
 }

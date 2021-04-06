@@ -10,7 +10,7 @@ export const Watched = () => {
             <ul className='results'>
               {results.map(movie => (
                 <li key={movie.id}>
-                  <Resultcard movie={movie}/>
+                  <Resultcard movie={movie} type='watched' />
                 </li>
               ))}
             </ul>

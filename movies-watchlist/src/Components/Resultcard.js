@@ -1,15 +1,17 @@
 import React from 'react';
 
-export const Resultcard = ({ movie }) => {
 
-  let watchlist = [0, 1, 2];
-  let storedMovie = watchlist.find(o => o.id === movie.id);
+let watchlist = []
+export default function Resultcard({ movie, type }) {
+  function addMovieToWatchlist(movie) {
+    watchlist.push(movie)
+    console.log(watchlist)
+    return watchlist
+  }
 
-  const watchlistDisabled = storedMovie ? true : false;
-
-  function addMovieToWatchlist() {
-
-}
+  //check if a movie is already on the watchlist
+  //let storedMovie = watchlist.find(o => o.id === movie.id);
+ // const watchlistDisabled = storedMovie ? true : false;
 
   return (
     <div className='result-card'>
@@ -28,13 +30,12 @@ export const Resultcard = ({ movie }) => {
             {movie.release_date ? movie.release_date.substring(0, 4) : '-'}</h4>
         </div>
         <div className='controls'>
-          <button className='btn' 
-          disabled={watchlistDisabled}
-         onClick={() => addMovieToWatchlist(movie)}>Add</button>
+          <button className='btn'
+            //disabled={watchlistDisabled}
+            onClick={() => addMovieToWatchlist(movie)}> ADD  </button>
         </div>
       </div>
     </div>
   )
 }
 
-export default Resultcard;

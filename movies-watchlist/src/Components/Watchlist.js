@@ -1,20 +1,25 @@
 import React from 'react'
 import Resultcard from '../Components/Resultcard'
 
-export const Watchlist = () => {
-  let results = [0, 1, 2];
+let watchlist = []
+
+const Watchlist = () => {
+
+  console.log('watchlist', watchlist)
   return (
     <div>
-      <h1>Watchlist Page</h1>
-      {results.length > 0 && (
-            <ul className='results'>
-              {results.map(movie => (
-                <li key={movie.id}>
-                  <Resultcard movie={movie}/>
-                </li>
-              ))}
-            </ul>
-          )}
+      <h3 className='title'>Watchlist Page</h3>
+      {watchlist.length > 0 ? (
+        <ul className='results'>
+          {watchlist.map(movie => (
+            <li key={movie.id}>
+              <Resultcard movie={movie} type='watchlist' />
+            </li>
+          ))}
+        </ul>
+      ) : <h3 className='title'>Nothing to watch...</h3>}
     </div>
   )
 }
+
+export default Watchlist;

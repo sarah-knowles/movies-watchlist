@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { Resultcard } from "./Resultcard";
+import Resultcard from "./Resultcard";
+
+
 
 export const Add = () => {
+  
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -21,19 +24,18 @@ export const Add = () => {
       });
   };
 
+
   return (
     <>
-        <div className="searchbox-wrap">
-          <input className='searchbox'
-            type="text"
-            placeholder="search..."
-            value={query}
-            onChange={onChange}
-          />
-        </div>
-    <div className="container">
+      <div className="searchbox-wrap">
+        <input className='searchbox'
+          type="text"
+          placeholder="search..."
+          value={query}
+          onChange={onChange}
+        />
+      </div>
       <div className="add-content">
-
         {results.length > 0 && (
           <ul className="results">
             {results.map((movie) => (
@@ -44,7 +46,6 @@ export const Add = () => {
           </ul>
         )}
       </div>
-    </div>
     </>
   );
 };
