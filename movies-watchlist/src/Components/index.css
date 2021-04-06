@@ -61,6 +61,7 @@ a {
   font-size: 28px;
   padding: 15px;
   margin-top: -35px;
+  margin-right: 45px;
 }
 
 .logo-container {
@@ -69,7 +70,8 @@ a {
 
 .logo {
   font-size: 3.5rem;
-  margin: 35px;
+  margin-left: 65px;
+  margin-top: 35px;
   background: -webkit-linear-gradient(rgb(223, 182, 233), #312038);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -92,6 +94,7 @@ a {
   border: none;
   border-radius: 5px;
   float: right;
+  margin-right: 35px;
   font-size: 22px;
   height: 35px;
   padding: 3px;
