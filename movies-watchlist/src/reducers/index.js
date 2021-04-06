@@ -1,4 +1,4 @@
-import { UPDATE_MOVIES, GET_MOVIES, DELETE_MOVIE } from '../actions/index'
+import { UPDATE_MOVIES, GET_MOVIES, DELETE_MOVIE, ADD_MOVIE_TO_WATCHLIST } from '../actions/index'
 
 function movies (state = [], action) {
   switch (action.type) {
@@ -15,6 +15,10 @@ function movies (state = [], action) {
 
     case DELETE_MOVIE :
       return state.filter(movie => movie.id !== action.id)
+
+    case ADD_MOVIE_TO_WATCHLIST:
+      return {...state, watchlist}  
+      
     default :
       return state
   }
