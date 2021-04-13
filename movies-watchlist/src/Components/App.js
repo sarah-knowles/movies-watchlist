@@ -5,29 +5,32 @@ import Watchlist from './Watchlist';
 import { Watched } from './Watched';
 import { Add } from './Add';
 import './index.css';
-
+import GlobalProvider from '../context/GlobalState';
 
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
+    <GlobalProvider>
 
-        <Route exact path='/watchlist'>
-          <Watchlist />
-        </Route>
+      <Router>
+        <Header />
+        <Switch>
 
-        <Route path='/watched'>
-          <Watched />
-        </Route>
+          <Route exact path='/watchlist'>
+            <Watchlist />
+          </Route>
 
-        <Route path='/add'>
-          <Add />
-        </Route>
+          <Route path='/watched'>
+            <Watched />
+          </Route>
 
-      </Switch>
-    </Router>
+          <Route path='/add'>
+            <Add />
+          </Route>
+
+        </Switch>
+      </Router>
+    </GlobalProvider>
   );
 }
 
