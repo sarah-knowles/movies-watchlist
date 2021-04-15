@@ -7,7 +7,7 @@ import { getMovies } from '../actions/index';
 class Watchlist extends React.Component {
   componentDidMount () {
     this.props.dispatch(getMovies())
-    console.log(this.props.movies)
+    console.log(this.props)
   }
 
 

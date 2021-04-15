@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header>
       <div className='logo-container'>
-        <a href='/add'><h1 className='logo' >Movies App</h1></a>
+        <a href='/watchlist'><h1 className='logo' >Movies App</h1></a>
       </div>
       <ul className='nav-links'>
         <li>

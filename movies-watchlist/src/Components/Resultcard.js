@@ -4,13 +4,6 @@ import { addMovieToWatchlist } from '../actions/index';
 
 
 class Resultcard extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     edit: false,
-  //     movie: this.props.movie
-  //   }
-  // }
   
   // ({ movie, type }) {
     // function addMovieToWatchlist(movie) {
