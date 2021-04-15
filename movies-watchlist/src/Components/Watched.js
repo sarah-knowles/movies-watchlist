@@ -1,8 +1,8 @@
 import React from 'react'
 import Resultcard from '../Components/Resultcard'
 
-export const Watched = () => {
-  let results = ['a', 'b', 'c']
+export function Watched (props) {
+  let results = []
   return (
     <div>
       <h1>Watched page</h1>
@@ -18,3 +18,4 @@ export const Watched = () => {
     </div>
   )
 }
+

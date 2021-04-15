@@ -8,27 +8,39 @@ import './index.css';
 
 
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      edit: false,
+      movie: this.props.movie
+    }
+  }
+  componentDidMount() {
+
+  }
+  render () {
   return (
-    <Router>
-      <Header />
-      <Switch>
 
-        <Route exact path='/watchlist'>
-          <Watchlist />
-        </Route>
+      <Router>
+        <Header />
+        <Switch>
 
-        <Route path='/watched'>
-          <Watched />
-        </Route>
+          <Route exact path='/watchlist'>
+            <Watchlist />
+          </Route>
 
-        <Route path='/add'>
-          <Add />
-        </Route>
+          <Route path='/watched'>
+            <Watched />
+          </Route>
 
-      </Switch>
-    </Router>
-  );
+          <Route path='/add'>
+            <Add />
+          </Route>
+
+        </Switch>
+      </Router>
+    );
+  }
 }
-
 export default App;

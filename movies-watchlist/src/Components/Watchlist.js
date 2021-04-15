@@ -1,17 +1,24 @@
-import React from 'react'
-import Resultcard from '../Components/Resultcard'
+import React from 'react';
+import Resultcard from '../Components/Resultcard';
+import { connect } from 'react-redux';
+import { getMovies } from '../actions/index';
 
-let watchlist = []
 
-const Watchlist = () => {
+class Watchlist extends React.Component {
+  componentDidMount () {
+    this.props.dispatch(getMovies())
+    console.log(this.props.movies)
+  }
 
-  console.log('watchlist', watchlist)
+
+render() {
+  const movies = this.props;
   return (
     <div>
       <h3 className='title'>Watchlist Page</h3>
-      {watchlist.length > 0 ? (
+      {movies.length > 0 ? (
         <ul className='results'>
-          {watchlist.map(movie => (
+          {movies.map(movie => (
             <li key={movie.id}>
               <Resultcard movie={movie} type='watchlist' />
             </li>
@@ -19,7 +26,15 @@ const Watchlist = () => {
         </ul>
       ) : <h3 className='title'>Nothing to watch...</h3>}
     </div>
-  )
+    )
+  }
 }
 
-export default Watchlist;
+
+function mapStateToProps (movies) {
+  return {
+    movies
+  }
+}
+
+export default connect(mapStateToProps)(Watchlist);

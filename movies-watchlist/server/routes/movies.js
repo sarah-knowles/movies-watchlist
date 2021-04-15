@@ -1,17 +1,21 @@
 const express = require('express')
 const router = express.Router()
-const db = require('../db/db')
+const { getMovies, saveMovie } = require('../db/db')
 
-router.get('/watchlist', (req, res) => {
-    db.listMovies()
-        .then(movies => {
-            res.json(movies)
-            return null
-        })
-        .catch(err => {
-            res.status(500).send(err.message)
-        })
+router.get('/', (req, res) => {
+    getMovies()
+        .then(movies => {res.json(movies)
+        .catch(err => {res.status(500).send(err.message)
+      })
+    })
+  })
+
+router.post('/', (req, res) => {
+    saveMovie(req.body)
+    .then(movie => res.status(201).json(movie))
+    .catch(() => res.sendStatus(500))
 })
+
 router.delete('watchlist/delete/:id', (req, res) => {
     const id = Number(req.params.id)
     if (id < 1 || isNaN(id)) return res.sendStatus(400)
