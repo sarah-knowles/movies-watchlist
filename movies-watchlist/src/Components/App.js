@@ -5,12 +5,22 @@ import Watchlist from './Watchlist';
 import { Watched } from './Watched';
 import { Add } from './Add';
 import './index.css';
-import GlobalProvider from '../context/GlobalState';
 
 
-function App() {
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      edit: false,
+      movie: this.props.movie
+    }
+  }
+  componentDidMount() {
+
+  }
+  render () {
   return (
-    <GlobalProvider>
 
       <Router>
         <Header />
@@ -30,8 +40,7 @@ function App() {
 
         </Switch>
       </Router>
-    </GlobalProvider>
-  );
+    );
+  }
 }
-
 export default App;

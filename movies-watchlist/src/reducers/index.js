@@ -1,27 +1,21 @@
-import { UPDATE_MOVIES, GET_MOVIES, DELETE_MOVIE, ADD_MOVIE_TO_WATCHLIST } from '../actions/index'
+  
+import { ADD_MOVIE_TO_WATCHLIST, SET_MOVIES, DELETE_MOVIE, SET_MOVIE } from '../actions/index';
 
-function movies (state = [], action) {
+export default function movies (state = [], action) {
   switch (action.type) {
-    case UPDATE_MOVIES:
-      return state.map(movie => {
-        if (movie.id === action.id) {
-          return { ...movie, ...action.updatedMovie }
-        }
-        return movie
-      })
+    case ADD_MOVIE_TO_WATCHLIST :
+      return [...state, action.movie]
 
-    case GET_MOVIES:
+    case SET_MOVIES :
       return action.movies
 
     case DELETE_MOVIE :
       return state.filter(movie => movie.id !== action.id)
 
-    case ADD_MOVIE_TO_WATCHLIST:
-      return {...state, watchlist}  
-      
+    case SET_MOVIE :
+      return state.map(movie => movie.id === action.movie.id ? action.movie : movie)
+
     default :
       return state
   }
 }
-
-export default movies

@@ -1,18 +1,28 @@
-export default (state, action) => {
+import { RECEIVE_MOVIES, ADD_MOVIE_TO_WATCHLIST, ADD_MOVIE_TO_WATCHED, DELETE_A_MOVIE, MOVE_TO_WATCHLIST } from '../actions/index';
+
+
+function movies (state = [], action) {
   switch(action.type) {
-    case 'ADD_MOVIE_TO_WATCHLIST':
+    case RECEIVE_MOVIES:
+      return action.movies
+
+    case ADD_MOVIE_TO_WATCHLIST:
       return {
         ...state, 
-        watchlist: [action.payload, ...state.watchlist]
+        movies: [action.payload, ...state.movies]
       };
-      case 'REMOVE_MOVIE_FROM_WATCHLIST':
-      return {
-        ...state,
-        watchlist: state.watchlist.filter(
-          (movie) => movie.id !== action.payload
-        ),
-      };
-      case "ADD_MOVIE_TO_WATCHED":
+
+      // case REMOVE_MOVIE_FROM_WATCHLIST:
+      // return {
+      //   ...state,
+      //   watchlist: state.watchlist.filter(
+      //     (movie) => movie.id !== action.payload
+      //   ),
+      // };
+      case DELETE_A_MOVIE:
+          return state.filter(movie => movie.id !== action.id)
+
+      case ADD_MOVIE_TO_WATCHED:
         return {
           ...state,
           watchlist: state.watchlist.filter(
@@ -20,7 +30,7 @@ export default (state, action) => {
           ),
           watched: [action.payload, ...state.watched],
         };
-      case "MOVE_TO_WATCHLIST":
+      case ADD_MOVIE_TO_WATCHLIST:
         return {
           ...state,
           watched: state.watched.filter(
@@ -28,7 +38,7 @@ export default (state, action) => {
           ),
           watchlist: [action.payload, ...state.watchlist],
         };
-      case "REMOVE_FROM_WATCHED":
+      case REMOVE_FROM_WATCHED:
         return {
           ...state,
           watched: state.watched.filter((movie) => movie.id !== action.payload),
@@ -37,3 +47,5 @@ export default (state, action) => {
       return state;
   }
 }
+
+export default movies;

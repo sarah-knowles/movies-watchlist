@@ -8,12 +8,25 @@ export function deleteMovie (id) {
 export function getAllMovies () {
   return request
     .get('/api/v1/watchlist')
-    .then(movies => movies.body)
+    .then(res => res.body)
 }
 
 export function addMovieToWatchlist (movie) {
   return request
     .post('/api/v1/watchlist')
-    .send(movie)
+    .send({ movie })
     .then((res => res.body))
+}
+
+export function patchMovie (id, patchData) {
+  return request.patch('/api/v1/movies' + id)
+  .send(patchData)
+  .then(res => res.body)
+}
+
+export function postMovie (movie) {
+  return request
+  .post('/api/v1/movies')
+  .send({ movie })
+  .then(response => response.body)
 }
